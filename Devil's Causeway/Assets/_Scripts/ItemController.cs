@@ -8,6 +8,8 @@ public class ItemController : MonoBehaviour {
 	public GameObject collectSmoke;
 	public GameObject collectSmokeClone;
 
+	public GameController gamecontroller;
+
 	// Use this for initialization
 	void Start () {
 		chestCollect = GetComponent<AudioSource> ();
@@ -20,6 +22,7 @@ public class ItemController : MonoBehaviour {
 
 	void DestroyChest (){
 		Destroy (gameObject);
+		this.gamecontroller.Gold += 500;
 	}
 
 	void DestroySmoke () {

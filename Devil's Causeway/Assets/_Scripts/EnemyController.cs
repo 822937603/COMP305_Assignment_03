@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour {
 	public GameObject deathFire;
 	public GameObject deathFireClone;
 
+	public GameController gamecontroller;
+
 	// Use this for initialization
 	void Start () {
 		skeletonDeathSound = GetComponent<AudioSource> ();
@@ -26,6 +28,7 @@ public class EnemyController : MonoBehaviour {
 
 	void DestroySkeleton (){
 		Destroy (gameObject);
+		this.gamecontroller.Life -= 1;
 	}
 	
 
