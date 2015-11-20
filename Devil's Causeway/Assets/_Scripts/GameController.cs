@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/// Jonathan Lee 822937603
+/// File: GameController.cs
+/// Last Updated: November 20th, 2015
+/// Controls the Canvas, holds the background music
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 

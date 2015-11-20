@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/// Jonathan Lee 822937603
+/// File: ItemController.cs
+/// Last Updated: November 20th, 2015
+/// Controls the Chest, instantiation of the smoke and coin collection sound
+
+using UnityEngine;
 using System.Collections;
 
 public class ItemController : MonoBehaviour {
@@ -22,6 +27,7 @@ public class ItemController : MonoBehaviour {
 
 	void DestroyChest (){
 		Destroy (gameObject);
+		//increment 500 gold
 		this.gamecontroller.Gold += 500;
 	}
 
@@ -33,8 +39,11 @@ public class ItemController : MonoBehaviour {
 		//Collision detection for colliding with the Player
 
 		if (otherGameObject.tag == "Player") {
+			//play collect sound
 			chestCollect.Play();
+			//create collected smoke
 			collectSmokeClone = (GameObject) Instantiate(collectSmoke, chest.transform.position, Quaternion.identity);
+			//destroy after a delay for sound, and for smoke to be viewed
 			Invoke ("DestroyChest",0.5f);
 			Destroy (collectSmokeClone, 3.0f);
 
